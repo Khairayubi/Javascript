@@ -226,6 +226,7 @@ const products = [
 
 let div = document.querySelector(".container");
 
+// For rendering Product items on screen
 for (const item in products){
 div.innerHTML += `<div class="card">
             <h2>${products[item].name}</h2>
@@ -234,12 +235,13 @@ div.innerHTML += `<div class="card">
         </div>`;
         }
 
+
 const categories = [];
 const button = document.querySelector(".btn");
 for (const productCategory of products){
     if( productCategory.category == categories){
     button.innerHTML += `<button>${productCategory.category}</button> ` 
-    }
+    }ro
 }
 
 
@@ -256,3 +258,13 @@ const category = products.map((item) => {
     if(item.category === "Electronics")
         console.log(item)
 })
+
+
+
+
+
+
+
+
+
+
