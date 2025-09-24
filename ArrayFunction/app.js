@@ -227,37 +227,61 @@ const products = [
 let div = document.querySelector(".container");
 
 // For rendering Product items on screen
-for (const item in products){
+// for (const item in products){
+// div.innerHTML += `<div class="card">
+//             <h2>${products[item].name}</h2>
+//             <h3>${products[item].category}</h2>
+//             <h2>${products[item].price}</h2>
+//         </div>`;
+//         }
+
+
+
+function renderItems(product){
+    div.innerHTML = ""; 
+    product.map(item =>{
+        {
 div.innerHTML += `<div class="card">
-            <h2>${products[item].name}</h2>
-            <h3>${products[item].category}</h2>
-            <h2>${products[item].price}</h2>
+            <h2>${item.name}</h2>
+            <h3>${item.category}</h2>
+            <h2>${item.price}</h2>
         </div>`;
         }
+    })
+}
+
+renderItems(products);
+
+let allCategories = ["All"];
+
+products.map(item =>{
+    if(!allCategories.includes(item.category)){
+        allCategories.push(item.category);
+    }
+});
 
 
-const categories = [];
-const button = document.querySelector(".btn");
-for (const productCategory of products){
-    if( productCategory.category == categories){
-    button.innerHTML += `<button>${productCategory.category}</button> ` 
-    }ro
+const button1 = document.querySelector(".btnn");
+allCategories.forEach(item => {
+    button1.innerHTML += `<button onclick="filterProduct('${item}')" >${item}</button>`;
+});
+
+
+function filterProduct(SelectedCategory){
+    if(SelectedCategory === "All"){
+        renderItems(products);
+    }
+    else{
+        const filteredItems = products.filter(item => item.category === SelectedCategory)
+    renderItems(filteredItems);
+    }
+    
 }
 
 
 
-const user = {
-  username: "abdullah",
-  email: "mabdullah2037@gmail.com",
-  age: 21,
-  hobbies: ["cricket", "swimming", "eating"],
-};
 
 
-const category = products.map((item) => {
-    if(item.category === "Electronics")
-        console.log(item)
-})
 
 
 
