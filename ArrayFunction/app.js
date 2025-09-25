@@ -244,7 +244,9 @@ function renderItems(product){
 div.innerHTML += `<div class="card">
             <h2>${item.name}</h2>
             <h3>${item.category}</h2>
-            <h2>${item.price}</h2>
+            <h2>$${item.price}</h2>
+            <button class="addTocart card-btn">Add to Cart</button>
+            
         </div>`;
         }
     })
@@ -277,6 +279,8 @@ function filterProduct(SelectedCategory){
     }
     
 }
+
+
 
 
 
