@@ -254,6 +254,7 @@ div.innerHTML += `<div class="card">
 
 renderItems(products);
 
+// array to hold all unique categories for buttons on top of the page
 let allCategories = ["All"];
 
 products.map(item =>{
